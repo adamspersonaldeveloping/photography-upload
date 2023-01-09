@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Yuki's Pics</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/css/main.css" />
+		<link rel="shortcut icon" href="photo_camera.ico" type="image/x-icon">
+		<noscript><link rel="stylesheet" href="/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1><a href="index.html"><strong>Yuki's Photography</strong> By Yuki</a></h1>
+						<nav>
+							<ul>
+								<li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
+							</ul>
+						</nav>
+					</header>
+
+				<!-- Main -->
+                <div id="main">
+                    <% for(var i=0; i<posts.length; i++) {%>
+					
+						<article class="thumb">
+							<a href="<%= posts[i].image%>" class="image"><img src="<%= posts[i].image%>" alt="" /></a>
+							<h2><%= posts[i].title %></h2>
+							<p><%= posts[i].caption %></p>
+						</article>
+
+                    <% } %>
+				</div>
+
+
+				<!-- Footer -->
+					<footer id="footer" class="panel">
+						<div class="inner split">
+							<div>
+								<section>
+									<h2>I am Yuki</h2>
+									<p>I am a professional photographer. You can often find me walking the beautiful streets of Sapporo or wandering around the splendid nature of Hokkaido. I love taking pictures of nature and city life, especially when they intertwine. If you would like to use any of my photographs or hire me for a professional photoshoot, please get in touch. You can reach me by filling out the form here or get in touch with any of my social media accounts.</p>
+								</section>
+								<section>
+									<h2>Follow me on ...</h2>
+									<ul class="icons">
+										<li><a href="https://www.instagram.com/yuuhi_ruka/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									</ul>
+								</section>
+								<p class="copyright">
+									&copy; Yuuhi* 2022
+								</p>
+							</div>
+							<div>
+								<section>
+									<h2>Get in touch</h2>
+									<form method="post" action="/index.html" name="Contact from Yukis website" data-netlify="true" netlify>
+										<div class="fields">
+											<div class="field half">
+												<input type="text" name="name" id="name" placeholder="Name" />
+											</div>
+											<div class="field half">
+												<input type="text" name="email" id="email" placeholder="Email" />
+											</div>
+											<div class="field">
+												<textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Send" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</section>
+							</div>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/js/jquery.min.js"></script>
+			<script src="/js/jquery.poptrox.min.js"></script>
+			<script src="/js/browser.min.js"></script>
+			<script src="/js/breakpoints.min.js"></script>
+			<script src="/js/util.js"></script>
+			<script src="/js/main.js"></script>
+
+	</body>
+</html>
