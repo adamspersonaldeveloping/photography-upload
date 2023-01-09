@@ -1,7 +1,7 @@
 # Showcasing for Photographers
 Allows the client to host their own photos in an elegant way. They can pick and choose which photos they want to showcase. They can also add a custom watermark and choose if they want the photo to automatically apply the watermark. 
 
-**Link to project:** http://recruiters-love-seeing-live-demos.com/
+**Link to project:** https://yuki-photography.cyclic.app
 
 ![front page](https://res.cloudinary.com/dllmha3wx/image/upload/v1673265718/yuki-demo-1_grehci.png)
 ![info](https://res.cloudinary.com/dllmha3wx/image/upload/v1673265718/yuki-demo3_d4m9vs.png)
