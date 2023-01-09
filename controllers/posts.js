@@ -36,7 +36,8 @@ module.exports = {
         result = await cloudinary.uploader.upload(req.file.path, {transformation: [
           {overlay: "yuki_watermaker_test"},
           {opacity:80},
-          {effect: "anti_removal:90", flags: "layer_apply", gravity: "south_west"}
+          {effect: "anti_removal:90", flags: "layer_apply", gravity: "south_east"},
+          {flags: "relative", width: "0.5"}
         ]});
       }else{
         result = await cloudinary.uploader.upload(req.file.path);
