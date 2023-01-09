@@ -4,8 +4,8 @@ Allows the client to host their own photos in an elegant way. They can pick and 
 **Link to project:** http://recruiters-love-seeing-live-demos.com/
 
 ![front page](https://res.cloudinary.com/dllmha3wx/image/upload/v1673265718/yuki-demo-1_grehci.png)
-![info](https://res.cloudinary.com/dllmha3wx/image/upload/v1673265718/yuki-demo-1_grehci.png)
-![full image displayed](https://res.cloudinary.com/dllmha3wx/image/upload/v1673265718/yuki-demo-1_grehci.png)
+![info](https://res.cloudinary.com/dllmha3wx/image/upload/v1673265718/yuki-demo3_d4m9vs.png)
+![full image displayed](https://res.cloudinary.com/dllmha3wx/image/upload/v1673265716/yuki-demo-2_pqxt2l.png)
 
 ## How It's Made:
 
