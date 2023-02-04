@@ -1,7 +1,7 @@
 # Showcasing for Photographers
 Allows the client to host their own photos in an elegant way. They can pick and choose which photos they want to showcase. They can also add a custom watermark and choose if they want the photo to automatically apply the watermark. 
 
-**Link to project:** https://yuki-photography.cyclic.app
+**Link to project:** https://www.yuhhiphotography.art/
 
 ![front page](https://res.cloudinary.com/dllmha3wx/image/upload/v1673265718/yuki-demo-1_grehci.png)
 ![info](https://res.cloudinary.com/dllmha3wx/image/upload/v1673265718/yuki-demo3_d4m9vs.png)
@@ -16,7 +16,6 @@ The backend is done with express.js and node.js using an MVC framework (Model, 
 The owner of the site can have access to uploading but outside from the owner, regular users will not be able to upload. The owner front end is mostly basic bootstrap to a slightly better than nothing user experience for the owner. 
 
 ## Optimizations
-*(optional)*
 
 I would like to add an option for the owner to change the watermark. At present, I have hardcoded the specific watermark and can easily change it, but I think it would be very useful for the owner to be able to change the watermark as they wish. At present. Sometimes working with cloudinary addons and extra features can be buggy. I was initially using their outdated docs which prohibited me from adding a watermark. I believe in the future I would not have this hard coded and make it more streamlined.
 
