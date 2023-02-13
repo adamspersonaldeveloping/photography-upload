@@ -1,11 +1,6 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
 
-/*
-	Multiverse by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
 
 @-moz-keyframes spinner {
 	0% {
@@ -656,16 +651,16 @@ input, select, textarea {
 		padding: 0.75em 1em;
 	}
 
-	input[type="checkbox"],
+	/* input[type="checkbox"],
 	input[type="radio"] {
 		-moz-appearance: none;
 		-webkit-appearance: none;
 		-ms-appearance: none;
-		appearance: none;
+		appearance: auto;
 		display: block;
 		float: left;
-		margin-right: -2em;
-		opacity: 0;
+		margin-left: .5em;
+		opacity: .5;
 		width: 1em;
 		z-index: -1;
 	}
@@ -727,7 +722,7 @@ input, select, textarea {
 
 	input[type="radio"] + label:before {
 		border-radius: 100%;
-	}
+	} */
 
 	::-webkit-input-placeholder {
 		color: #707071 !important;
@@ -1286,7 +1281,7 @@ input, select, textarea {
 				color: #ffffff;
 			}
 
-		.poptrox-popup .loader {
+		.poptrox-popup .loader .submit-graphic{
 			-moz-animation: spinner 1s infinite linear !important;
 			-webkit-animation: spinner 1s infinite linear !important;
 			-ms-animation: spinner 1s infinite linear !important;
@@ -1408,7 +1403,7 @@ input, select, textarea {
 				z-index: 10003;
 			}
 
-		#wrapper:before {
+		#wrapper:before .submit-graphic{
 			-moz-animation: spinner 1s infinite linear !important;
 			-webkit-animation: spinner 1s infinite linear !important;
 			-ms-animation: spinner 1s infinite linear !important;

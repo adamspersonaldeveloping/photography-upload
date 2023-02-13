@@ -24,11 +24,11 @@
                   <label for="imgUpload" class="form-label">Image</label>
                   <input type="file" class="form-control" id="imageUpload" name="file">
                 </div>
-                <div class="mb-3">
-                  <label for="watermark" class="form-label">Would you like to add a watermark?</label>
-                  <input type="checkbox" class="form-check" id="watermark" name="watermark">
+                <div class="mb-3 d-flex form-check">
+                  <label for="watermark" class="form-check-label">Would you like to add a watermark?</label>
+                  <input type="checkbox" class="form-check-input ml-2" id="watermark" name="watermark" style="margin-left: .5em;">
                 </div>
-                <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                <button id="submit-button-animation" type="submit" class="btn btn-primary" value="Upload">Submit</button>
               </form>
               <div class="mb-3">
                 <span>After submitting the picture, it might take a couple of minutes for all the magic to happen. Wait 30 seconds before refreshing or hitting submit again.</span>
