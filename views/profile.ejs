@@ -28,9 +28,11 @@
                   <label for="watermark" class="form-check-label">Would you like to add a watermark?</label>
                   <input type="checkbox" class="form-check-input ml-2" id="watermark" name="watermark" style="margin-left: .5em;">
                 </div>
-                <button id="submit-button-animation" type="submit" class="btn btn-primary" value="Upload">Submit</button>
+                <div id="submit-button-animation" class="btn btn-primary">Submit</div>
+                <button id="hidden-submit" type="submit" class="d-none" value="Upload">hidden</button>
               </form>
               <div class="mb-3">
+                <div id="submit-loading" class=""></div>
                 <span>After submitting the picture, it might take a couple of minutes for all the magic to happen. Wait 30 seconds before refreshing or hitting submit again.</span>
               </div>
             </div>
@@ -64,4 +66,13 @@
     </div>
   </div>
 </div>
+<script>
+  const submitBtn = document.querySelector('#submit-button-animation')
+  submitBtn.addEventListener('click', startAnimation)
+  function startAnimation(){
+      console.log('foo')
+      document.querySelector('#submit-loading').classList.add('loadingAnimation')
+      document.querySelector('#hidden-submit').click()
+  }
+  </script>
 <%- include('partials/footer') -%>
