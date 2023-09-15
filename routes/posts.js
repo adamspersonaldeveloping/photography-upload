@@ -8,5 +8,6 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 router.get("/:id", ensureAuth, postsController.getPost);
 router.post("/createPost", upload.single("file"), postsController.createPost);
 router.delete("/deletePost/:id", postsController.deletePost);
+router.post("/sendMessage", postsController.sendMessage);//need to make this work
 
 module.exports = router;

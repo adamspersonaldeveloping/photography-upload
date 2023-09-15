@@ -1,5 +1,7 @@
 const cloudinary = require("../middleware/cloudinary");
 const Post = require("../models/Post");
+const Message = require("../models/Message")
+const nodemailer = require("nodemailer")
 
 
 
@@ -46,6 +48,45 @@ module.exports = {
       });
       console.log("Post has been added!");
       res.redirect("/profile");
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  sendMessage: async (req, res) => {
+    //the following should just send an email when a message is sent
+    try {
+        console.log( req.body.email, req.body.name,
+          req.body.message)
+        await Message.create({
+          email: req.body.email,
+          name: req.body.name,
+          message: req.body.message
+        });
+      console.log( req.body.email, req.body.name,
+        req.body.message)
+      console.log("A message has been sent");
+      res.redirect("/");
+      //Send email with the message for Yuki
+      let transporter = nodemailer.createTransport({
+        host: "smtp.gmail.com",
+        service: "Gmail",
+        auth: {
+            user: process.env.USER,
+            pass:  process.env.GMAIL_SECRET
+        },
+        // tls:{
+        //   rejectUnauthorized: false
+        // }
+      });
+     // send mail with defined transport object
+      let info = await transporter.sendMail({
+        from: '<steinbeals@gmail.com>', 
+        to: "adamspersonaldeveloping@gmail.com",
+        subject: "New message from Yuuhi's Photography", 
+        text: 'You have a ne message from ' + req.body.name + ' with the email of ' + req.body.email + ' the following is the message that was sent: \n\n' + req.body.message, 
+        html: ``, 
+      });
     } catch (err) {
       console.log(err);
     }
