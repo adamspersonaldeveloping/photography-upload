@@ -75,22 +75,44 @@ module.exports = {
             user: process.env.USER,
             pass:  process.env.GMAIL_SECRET
         },
-        // tls:{
-        //   rejectUnauthorized: false
-        // }
       });
      // send mail with defined transport object
       let info = await transporter.sendMail({
         from: '<steinbeals@gmail.com>', 
         to: "adamspersonaldeveloping@gmail.com",
         subject: "New message from Yuuhi's Photography", 
-        text: 'You have a ne message from ' + req.body.name + ' with the email of ' + req.body.email + ' the following is the message that was sent: \n\n' + req.body.message, 
+        text: 'You have a new message from ' + req.body.name + ' with the email of ' + req.body.email + ' the following is the message that was sent: \n\n' + req.body.message, 
         html: ``, 
       });
     } catch (err) {
       console.log(err);
     }
   },
+  getMessages: async (req, res) => {
+    try {
+      const messages = await Message.find().sort({ createdAt: "desc" }).lean();
+      res.render("messages.ejs", { messages: messages});
+    } catch (err) {
+      console.log(err);
+    }
+  },
+
+  deleteMessage: async (req, res) => {
+    try {
+      // Find post by id
+      let message = await Message.findById({ _id: req.params.id });
+      
+      // Delete post from db
+      await Message.deleteOne({ _id: req.params.id });
+      
+      console.log("Deleted Post");
+      res.redirect("/messages");
+    } catch (err) {
+      console.log(err)
+      res.redirect("/profile");
+    }
+  },
+  
   
   deletePost: async (req, res) => {
     try {
@@ -100,7 +122,7 @@ module.exports = {
       // Delete image from cloudinary
       await cloudinary.uploader.destroy(post.cloudinaryId);
       // Delete post from db
-      await Post.remove({ _id: req.params.id });
+      await Post.deleteOne({ _id: req.params.id });
       
       console.log("Deleted Post");
       res.redirect("/profile");

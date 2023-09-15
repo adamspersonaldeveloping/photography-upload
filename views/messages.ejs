@@ -1,0 +1,30 @@
+<%- include('partials/header') -%>
+  <div class="container">
+    <div class=" justify-content-center mt-5">
+      <ul class="row list-unstyled d-flex justify-content-between">
+        <% if(messages.length == 0){%>
+            <a style="border-bottom: none;" href="/profile"><span class="btn btn-outline-info">There are no messages at this time. Return to upload page.</span></a>
+            <% } %>
+        <% for(var i=0; i<messages.length; i++) {%>
+            <div style="border: 2px white solid;" class="mb-5 mx-2 col-lg-5">
+                <li>
+                  <span>Name:</span>
+                  <span><%= messages[i].name %></span>
+                </li>
+                <li>
+                  <span>Email:</span>
+                  <a href="mailto:<%= messages[i].email %>"><span><%= messages[i].email %></span></a>
+                </li>
+                <li>
+                  <span>Message:</span>
+                  <span class=""><%= messages[i].message%></span>
+                </li>
+                <form action="/post/deleteMessage/<%= messages[i]._id %>?_method=DELETE" method="POST">
+                    <button class="btn btn-outline-danger fw-bold mt-2" type="submit">Delete Message</button>
+                </form>
+            </div> 
+        <% } %>
+        </ul>
+    </div>
+  </div>  
+<%- include('partials/footer') -%>
