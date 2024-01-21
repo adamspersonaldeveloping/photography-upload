@@ -10,7 +10,7 @@ const logger = require("morgan");
 const connectDB = require("./config/database");
 const mainRoutes = require("./routes/main");
 const postRoutes = require("./routes/posts");
-const path = require("path")
+const path = require("path");
 
 //Use .env file in config folder
 require("dotenv").config({ path: "./config/.env" });
@@ -19,22 +19,14 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 
 //Connect To Database
-connectDB = async () => {
-  try {
-    const conn = await mongoose.connect(process.env.DB_STRING);
-    console.log(`MongoDB Connected: ${conn.connection.host}`);
-  } catch (error) {
-    console.log(error);
-    process.exit(1);
-  }
-}
+connectDB();
 
 //Using EJS for views
 app.set("view engine", "ejs");
 
 //Static Folder
-app.use(express.static(path.join(__dirname, "public")))
-app.use(express.static(path.join(__dirname, "/public")))
+app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "/public")));
 app.use(express.static("/public"));
 
 //Body Parsing
@@ -70,5 +62,7 @@ app.use("/post", postRoutes);
 
 //Server Running
 app.listen(process.env.PORT, () => {
-  console.log(`Server is running on port ${process.env.PORT}, you better catch it!`);
+  console.log(
+    `Server is running on port ${process.env.PORT}, you better catch it!`
+  );
 });
